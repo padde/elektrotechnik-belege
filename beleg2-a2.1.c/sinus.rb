@@ -20,7 +20,9 @@ def get_samples( duration = 3 )
 end
 
 
-omega = 65.0/SAMPLING_FACTOR # 65 Hz Sinus
+# frequency: 65 Hz
+omega = 65.0/SAMPLING_FACTOR
+
 
 # aa) sin(wt)
 samples = get_samples do |t|
@@ -39,7 +41,7 @@ write_to_new_file samples, "sinus2.wav"
 
 # ac) sin3(wt)
 samples = get_samples do |t|
-  # 1/4 * (     3*Math::sin(  omega*t) - Math::sin(3*omega*t) ) * 65.0
+  # 1/4 * ( 3*Math::sin(omega*t) - Math::sin(3*omega*t) )
   Math::sin(omega*t) * Math::sin(omega*t) * Math::sin(omega*t)
 end
 write_to_new_file samples, "sinus3.wav"
@@ -47,7 +49,7 @@ write_to_new_file samples, "sinus3.wav"
 
 # ad) sin4(wt)
 samples = get_samples do |t|
-  # 1/8 * ( 3 - 4*Math::cos(2*omega*t) + Math::cos(4*omega*t) ) * 65.0
+  # 1/8 * ( 3 - 4*Math::cos(2*omega*t) + Math::cos(4*omega*t) )
   Math::sin(omega*t) * Math::sin(omega*t) * Math::sin(omega*t) * Math::sin(omega*t)
 end
 write_to_new_file samples, "sinus4.wav"
