@@ -82,8 +82,8 @@ end
 # from another file, but run on its own.
 if __FILE__ == $0
   # f = 1/T
-  # omega = 2π/T
-  # => omega = 2*π*T 
+  # omega = (2*pi)/T
+  # => omega = 2*pi*T 
   omega = 2 * Math::PI * 65.0
 
   # generate samples for sin(omega*t), ..., sin^4(omega*t)
