@@ -13,3 +13,4 @@ Thumbs.db
 # project specific files
 *.wav
 */doc/
+.yardoc/
