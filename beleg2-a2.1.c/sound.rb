@@ -33,17 +33,12 @@ require 'wavefile'
 #   sound.save "sine.wav"
 #
 class Sound
-  # channels: 1 (mono)
   CHANNELS        = 1
-  # samples per second: 44100
   SAMPLING_RATE   = 44100.0
-  # bits per sample: 16
   BITS_PER_SAMPLE = 16
-  # duration: 3 seconds
   DURATION        = 3.0
   
   def initialize
-    # array holding the samples
     @samples = []
   end
   
@@ -78,16 +73,9 @@ class Sound
 end
 
 
-# The following code is only executed if the file is _not_ included
-# from another file, but run on its own.
 if __FILE__ == $0
-  # f = 1/T
-  # omega = (2*pi)/T
-  # => omega = 2*pi*T 
   omega = 2 * Math::PI * 65.0
 
-  # generate samples for sin(omega*t), ..., sin^4(omega*t)
-  # and write them to a WAV file
   for i in 1..4 do
     sound = Sound.new
     sound.generate_samples do |t|
