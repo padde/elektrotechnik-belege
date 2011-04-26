@@ -76,7 +76,7 @@ end
 if __FILE__ == $0
   omega = 2 * Math::PI * 65.0
 
-  for i in 1..4 do
+  1.upto 4 do
     sound = Sound.new
     sound.generate_samples do |t|
       Math::sin(omega*t) ** i
